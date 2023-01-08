@@ -1,0 +1,8 @@
+﻿  main.c
+  vm.c
+d:\source\repos\processor\processor2\vm.c(4): warning C4113: "int (__cdecl *)(vcpu_context_t *)" отличается в списках параметров от "instruction_handler_pfn"
+d:\source\repos\processor\processor2\vm.c(214): warning C4090: =: разные квалификаторы "const"
+  vm_executable.c
+  vm_ih.c
+  Создание кода...
+  processor2.vcxproj -> D:\source\repos\processor\Debug\processor2.exe

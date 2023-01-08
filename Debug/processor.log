@@ -1,0 +1,7 @@
+﻿  assembler.c
+d:\source\repos\processor\assembler.c(81): warning C4029: объявленный список формальных параметров отличается от объявления
+  processor.c
+d:\source\repos\processor\processor.c(82): warning C4083: требуется "строка"; обнаружен идентификатор "off"
+d:\source\repos\processor\processor.c(86): warning C4244: return: преобразование "time_t" в "int", возможна потеря данных
+  Создание кода...
+  processor.vcxproj -> D:\source\repos\processor\Debug\processor.exe

@@ -1,0 +1,32 @@
+mov reg, reg/imm8
+xch reg, reg
+add reg, reg/imm8
+sub reg, reg/imm8
+cmp reg, reg/imm8
+and reg, reg/imm8
+push reg, reg/imm8
+pop (reg)
+jmp reg/imm8
+jnz reg/imm8
+jz reg/imm8
+je reg/imm8
+jne reg/imm8
+jl reg/imm8
+jle reg/imm8
+jg reg/imm8
+jge reg/imm8
+call reg/imm8
+
+External symbols:
+ 0 - exit
+ 1 - printf
+
+ecall reg/imm8
+
+
+
+
+
+ret
+hlt
+esym "string in stack end of '\0'"
