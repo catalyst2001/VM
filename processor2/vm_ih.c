@@ -857,7 +857,7 @@ int vm_ih_jge(int opcode, vcpu_context_t *p_vmctx)
 
 int vm_ih_call_c(int opcode, vcpu_context_t *p_vmctx)
 {
-	p_vmctx->cpuregs.PIP = p_vmctx->cpuregs.IP;
+	p_vmctx->cpuregs.PIP = p_vmctx->cpuregs.IP + 1;
 	p_vmctx->cpuregs.IP = p_vmctx->cpuregs.CS[p_vmctx->cpuregs.IP];
 	return 0;
 }

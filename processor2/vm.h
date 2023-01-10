@@ -19,6 +19,8 @@
 #define VM_ERROR_ACCESS_VIOLATION 1
 #define VM_ERROR_UNKNOWN_INSTRUCTION 2
 #define VM_MANUALLY_TERMINATED 3
+#define VM_STACK_OVERFLOWL 4
+#define VM_STACK_OVERFLOW 5
 
 /* virutal machine context flags */
 #define VM_FEXEC (1 << 0)

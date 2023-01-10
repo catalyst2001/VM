@@ -3,33 +3,12 @@
 #include "vm.h"
 
 vcpu_context_t context;
-
 char stack[200];
-
-int extr_printf(vcpu_context_t *p_vmctx)
-{
-	//int c = p_vmctx->cpuregs.SS[p_vmctx->cpuregs.SP];
-	//printf();
-	return 0;
-}
-
-vm_external_func_def_t extenrals[] = {
-	{ "printf", extr_printf }
-};
 
 // instruction step handling
 VM_DEBUG_INTRUCTION_EXEC debug_instruction_step_cb(vcpu_context_t *p_context)
 {
-	//Sleep(50);
-	printf("op %s on addr %d  (rA: %d | rB: %d | rC: %d | rD: %d | IP: %d | SP: %d )\n", vm_opcode_name(p_context->cpuregs.CS[p_context->cpuregs.IP]),
-		p_context->cpuregs.IP,
-		p_context->cpuregs.A,
-		p_context->cpuregs.B,
-		p_context->cpuregs.C,
-		p_context->cpuregs.D,
-		p_context->cpuregs.IP,
-		p_context->cpuregs.SP
-	);
+	Sleep(50);
 	return VM_EXEC_NEXT;
 }
 
@@ -40,9 +19,25 @@ VM_DEBUG_INTRUCTION_EXEC breakpoint_raised(vcpu_context_t *p_context)
 	return VM_EXEC_TERMINATE;
 }
 
+void instruction_cb(vcpu_context_t *p_context)
+{
+	//Sleep(50);
+	printf("op %s on addr %d  (rA: %d | rB: %d | rC: %d | rD: %d | IP: %d | SP: %d | PIP: %d )\n", vm_opcode_name(p_context->cpuregs.CS[p_context->cpuregs.IP]),
+		p_context->cpuregs.IP,
+		p_context->cpuregs.A,
+		p_context->cpuregs.B,
+		p_context->cpuregs.C,
+		p_context->cpuregs.D,
+		p_context->cpuregs.IP,
+		p_context->cpuregs.SP,
+		p_context->cpuregs.PIP
+	);
+}
+
 vm_callbacks_dt_t vm_cbs = {
 	.vm_debug_instruction_step = debug_instruction_step_cb,
-	.vm_breakpoint_raised = breakpoint_raised
+	.vm_breakpoint_raised = breakpoint_raised,
+	.vm_instruction = instruction_cb
 };
 
 int main()
@@ -81,9 +76,6 @@ int main()
 	context.stack_size = sizeof(stack);
 	context.cpuregs.SS = (char *)stack;
 	context.p_callbacks = &vm_cbs;
-
-	context.number_of_externals = sizeof(extenrals) / sizeof(extenrals[0]);
-	context.p_extrns = extenrals;
 
 	int status = vm_start_execution(&context);
 	if (status != VM_ERROR_NONE) {

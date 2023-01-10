@@ -151,6 +151,7 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClCompile Include="assembler.c" />
     <ClCompile Include="bytearray.c" />
     <ClCompile Include="vm.c" />
     <ClCompile Include="vm_executable.c" />
@@ -158,6 +159,7 @@
     <ClCompile Include="main.c" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="assembler.h" />
     <ClInclude Include="bytearray.h" />
     <ClInclude Include="vm.h" />
     <ClInclude Include="vm_executable.h" />

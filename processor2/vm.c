@@ -301,6 +301,7 @@ int vm_start_execution(vcpu_context_t *p_context)
 		// call opcode handler
 		p_context->cpuregs.IP++;
 		p_context->cpuregs.IP += op_handlers[opcode](opcode, p_context);
+		VM_SAFE_DT_CALL(p_context->p_callbacks, vm_instruction, p_context);
 	}
 	return execution_status;
 }

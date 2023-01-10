@@ -6,6 +6,7 @@
     <ClCompile Include="vm_executable.c" />
     <ClCompile Include="vm.c" />
     <ClCompile Include="bytearray.c" />
+    <ClCompile Include="assembler.c" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="vm_defs.h" />
@@ -14,5 +15,6 @@
     <ClInclude Include="vm_executable.h" />
     <ClInclude Include="vm.h" />
     <ClInclude Include="bytearray.h" />
+    <ClInclude Include="assembler.h" />
   </ItemGroup>
 </Project>

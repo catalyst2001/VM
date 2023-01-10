@@ -30,8 +30,9 @@ typedef enum VM_DEBUG_INTRUCTION_EXEC_ {
 } VM_DEBUG_INTRUCTION_EXEC;
 
 typedef struct vm_callbacks_dt_s {
-	VM_DEBUG_INTRUCTION_EXEC(*vm_debug_instruction_step)(vcpu_context_t *p_context);
-	VM_DEBUG_INTRUCTION_EXEC(*vm_breakpoint_raised)(vcpu_context_t *p_context);
+	VM_DEBUG_INTRUCTION_EXEC (*vm_debug_instruction_step)(vcpu_context_t *p_context);
+	VM_DEBUG_INTRUCTION_EXEC (*vm_breakpoint_raised)(vcpu_context_t *p_context);
+	void                     (*vm_instruction)(vcpu_context_t *p_context);
 } vm_callbacks_dt_t;
 
 /* virtual processor context */
