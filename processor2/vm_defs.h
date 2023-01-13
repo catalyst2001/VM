@@ -10,6 +10,8 @@ typedef unsigned char flags_t;
 /* VCPU flags */
 #define VCPU_ZF (1 << 0)
 #define VCPU_SF (1 << 1)
+#define VCPU_OF (1 << 2)
+#define VCPU_CF (1 << 3)
 
 typedef struct vcpu_context_s vcpu_context_t;
 

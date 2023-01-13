@@ -261,7 +261,7 @@ int vm_start_execution(vcpu_context_t *p_context)
 	int execution_status = VM_ERROR_NONE;
 	while (p_context->vm_flags & VM_FEXEC) {
 		if (p_context->cpuregs.IP >= p_context->code_size) {
-			printf("Address 0x%x out of code segment! vCPU program has terminated!\n", p_context->cpuregs.IP);
+			printf("Address %d out of code segment!\n", p_context->cpuregs.IP);
 			return VM_ERROR_ACCESS_VIOLATION;
 		}
 
@@ -284,7 +284,7 @@ int vm_start_execution(vcpu_context_t *p_context)
 
 		// handle HALT instruction
 		if (opcode == OP_HALT) {
-			printf("HALT instruction at address 0x%x  vCPU program has terminated!\n", p_context->cpuregs.IP);
+			printf("HALT instruction at address %d!\n", p_context->cpuregs.IP);
 			p_context->vm_flags &= ~VM_FEXEC;
 			continue;
 		}

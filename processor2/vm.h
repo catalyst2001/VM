@@ -3,7 +3,6 @@
  Simple Interpreted Virtual Machine
 
  Simple interpreted virtual machine that emulates an 8-bit processor.
- Performance improvement achieved through the use of states machine.
 
  Author: Deryabin K.
  Date: 08.01.03 1:33

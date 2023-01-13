@@ -1,2 +1,4 @@
 ﻿  ConsoleApplication1.cpp
+d:\source\repos\processor\consoleapplication1\consoleapplication1.cpp(215): warning C4101: carry: неиспользованная локальная переменная
+d:\source\repos\processor\consoleapplication1\consoleapplication1.cpp(300): warning C4101: res: неиспользованная локальная переменная
   ConsoleApplication1.vcxproj -> D:\source\repos\processor\Debug\ConsoleApplication1.exe

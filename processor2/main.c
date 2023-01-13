@@ -8,7 +8,7 @@ char stack[200];
 // instruction step handling
 VM_DEBUG_INTRUCTION_EXEC debug_instruction_step_cb(vcpu_context_t *p_context)
 {
-	Sleep(50);
+	Sleep(100);
 	return VM_EXEC_NEXT;
 }
 
