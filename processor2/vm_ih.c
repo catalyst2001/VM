@@ -499,7 +499,7 @@ int vm_ih_cmp_c_const(int opcode, vcpu_context_t *p_vmctx)
 
 int vm_ih_cmp_d_const(int opcode, vcpu_context_t *p_vmctx)
 {
-	vm_cmp_update_flags(p_vmctx, p_vmctx->cpuregs.C, p_vmctx->cpuregs.CS[p_vmctx->cpuregs.IP]);
+	vm_cmp_update_flags(p_vmctx, p_vmctx->cpuregs.D, p_vmctx->cpuregs.CS[p_vmctx->cpuregs.IP]);
 	return sizeof(register_t);
 }
 
